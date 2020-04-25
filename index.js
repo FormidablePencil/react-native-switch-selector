@@ -320,5 +320,5 @@ SwitchSelector.propTypes = {
   initial: PropTypes.number,
   value: PropTypes.number,
   onPress: PropTypes.func,
-  friction: propTypes.number,
+  friction: PropTypes.number,
 };
