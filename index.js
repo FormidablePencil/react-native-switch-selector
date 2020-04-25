@@ -94,13 +94,13 @@ export default class SwitchSelector extends Component {
     && !(Math.abs(gestureState.dx) < 5 && Math.abs(gestureState.dy) < 5);
 
   animate = (value, last) => {
-    const { animationDuration } = this.props;
+    const { animationDuration, friction } = this.props;
     this.animatedValue.setValue(last);
     Animated.timing(this.animatedValue, {
       toValue: value,
-      duration: this.animationDuration,
+      duration: animationDuration,
       easing: Easing.bounce,
-      friction: this.friction, 
+      friction: friction,
       useNativeDriver: true,
     }).start();
   };
@@ -240,7 +240,7 @@ export default class SwitchSelector extends Component {
                             outputRange: [
                               hasPadding ? valuePadding : 0,
                               sliderWidth
-                                - (hasPadding ? valuePadding : 0),
+                              - (hasPadding ? valuePadding : 0),
                             ],
                           }),
                         },
@@ -283,7 +283,7 @@ SwitchSelector.defaultProps = {
   buttonMargin: 0,
   buttonColor: '#BCD635',
   returnObject: false,
-  animationDuration: 100,
+  animationDuration: 1000,
   disabled: false,
   disableValueChangeOnPress: false,
   initial: -1,
@@ -320,5 +320,5 @@ SwitchSelector.propTypes = {
   initial: PropTypes.number,
   value: PropTypes.number,
   onPress: PropTypes.func,
-  friction: PropTypes.number
+  friction: propTypes.number,
 };
