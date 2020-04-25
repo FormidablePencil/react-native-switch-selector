@@ -21,7 +21,7 @@ const styles = {
   animated: {
     borderWidth: 0,
     position: 'absolute',
-    padding: 20
+    padding: 20,
   },
 };
 
@@ -98,8 +98,9 @@ export default class SwitchSelector extends Component {
     this.animatedValue.setValue(last);
     Animated.timing(this.animatedValue, {
       toValue: value,
-      duration: animationDuration,
-      easing: Easing.cubic,
+      duration: this.animationDuration,
+      easing: Easing.bounce,
+      friction: this.friction, 
       useNativeDriver: true,
     }).start();
   };
@@ -288,6 +289,7 @@ SwitchSelector.defaultProps = {
   initial: -1,
   value: 1,
   onPress: null,
+  friction: 2
 };
 
 SwitchSelector.propTypes = {
@@ -318,4 +320,5 @@ SwitchSelector.propTypes = {
   initial: PropTypes.number,
   value: PropTypes.number,
   onPress: PropTypes.func,
+  friction: PropTypes.number
 };
