@@ -21,6 +21,7 @@ const styles = {
   animated: {
     borderWidth: 0,
     position: 'absolute',
+    padding: 20
   },
 };
 
