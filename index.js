@@ -21,7 +21,7 @@ const styles = {
   animated: {
     borderWidth: 0,
     position: 'absolute',
-    padding: 20,
+    padding: this.props.paddingSwitch,
   },
 };
 
@@ -289,7 +289,8 @@ SwitchSelector.defaultProps = {
   initial: -1,
   value: 1,
   onPress: null,
-  friction: 2
+  friction: 2,
+  paddingSwitch: 15
 };
 
 SwitchSelector.propTypes = {
@@ -321,4 +322,5 @@ SwitchSelector.propTypes = {
   value: PropTypes.number,
   onPress: PropTypes.func,
   friction: PropTypes.number,
+  paddingSwitch: PropTypes.number
 };
