@@ -21,7 +21,6 @@ const styles = {
   animated: {
     borderWidth: 0,
     position: 'absolute',
-    padding: this.props.paddingSwitch,
   },
 };
 
@@ -247,6 +246,7 @@ export default class SwitchSelector extends Component {
                       ],
                       borderRadius,
                       margin: buttonMargin,
+                      padding: this.props.paddingSwitch,
                     },
                     styles.animated,
                   ]}
